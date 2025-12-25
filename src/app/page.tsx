@@ -2,6 +2,8 @@ import Image from "next/image";
 import { ChefHat, Heart, Zap } from "lucide-react";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 import { FloatingNav } from "@/components/sections/floating-nav";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+
 
 const ORDER =
   "https://www.ubereats.com/fr/store/dwich-62/hzRUGGVdVcKtznoiMcZBOA?srsltid=AfmBOoozqp5x_Q1fpKtyQyZuWswIiNdNzNsM7GFz609yxOE34fHpo9Rk";
@@ -72,14 +74,15 @@ export default function Page() {
               Voir le menu
             </a>
 
-            <a
+            <InteractiveHoverButton
               href={ORDER}
               target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
-            >
-              Commander (Uber Eats)
-            </a>
+              text="Commander (Uber Eats)"
+              className="w-60"
+            />
+
+
+
           </div>
 
           {/* BADGES: 4,9 / 815 */}
@@ -99,44 +102,43 @@ export default function Page() {
       </section>
 
       {/* MENU */}
-      <section id="menu" className="scroll-mt-32 mx-auto max-w-6xl px-4 py-14 sm:py-20">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-            Notre Menu
-          </h2>
-          <p className="mt-4 text-black/60 text-sm sm:text-base">
-            De quoi manger vraiment. Pas un truc décoratif.
-          </p>
-        </div>
+<section id="menu" className="scroll-mt-32 mx-auto max-w-6xl px-4 py-14 sm:py-20">
+  <div className="text-center">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+      Notre Menu
+    </h2>
+    <p className="mt-4 text-black/60 text-sm sm:text-base">
+      De quoi manger vraiment. Pas un truc décoratif.
+    </p>
+  </div>
 
-        <div className="mt-10 grid gap-6 md:gap-8 md:grid-cols-3">
-          {menuCards.map((c) => (
-            <article key={c.title} className="overflow-hidden rounded-2xl border bg-white shadow-sm">
-              <div className="relative h-52 sm:h-56 w-full">
-                <Image alt={c.title} src={c.img} fill className="object-cover" />
-                <div className="absolute bottom-3 left-3 rounded-full bg-black/55 px-3 py-1 text-sm text-white">
-                  {c.price}
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl sm:text-2xl font-semibold">{c.title}</h3>
-                <p className="mt-3 text-black/60 text-sm sm:text-base">{c.desc}</p>
-              </div>
-            </article>
-          ))}
+  <div className="mt-10 grid gap-6 md:gap-8 md:grid-cols-3">
+    {menuCards.map((c) => (
+      <article key={c.title} className="overflow-hidden rounded-2xl border bg-white shadow-sm">
+        <div className="relative h-52 sm:h-56 w-full">
+          <Image alt={c.title} src={c.img} fill className="object-cover" />
+          <div className="absolute bottom-3 left-3 rounded-full bg-black/55 px-3 py-1 text-sm text-white">
+            {c.price}
+          </div>
         </div>
+        <div className="p-6">
+          <h3 className="text-xl sm:text-2xl font-semibold">{c.title}</h3>
+          <p className="mt-3 text-black/60 text-sm sm:text-base">{c.desc}</p>
+        </div>
+      </article>
+    ))}
+  </div>
 
-        <div className="mt-10 flex justify-center">
-          <a
-            href={ORDER}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-green-600 px-7 py-3 text-sm font-semibold text-white hover:bg-green-700"
-          >
-            Commander sur Uber Eats
-          </a>
-        </div>
-      </section>
+  {/* ✅ Bouton centré */}
+  <div className="mt-10 flex justify-center">
+    <InteractiveHoverButton
+      href="#menu"
+      text="Voir le menu"
+      className="w-44 bg-green-600 text-white border-green-600 hover:bg-green-700"
+    />
+  </div>
+</section>
+
 
       {/* ABOUT */}
       <section id="about" className="scroll-mt-32 bg-white py-14 sm:py-20">
