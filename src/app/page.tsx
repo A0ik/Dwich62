@@ -3,6 +3,8 @@ import { ChefHat, Heart, Zap } from "lucide-react";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 import { FloatingNav } from "@/components/sections/floating-nav";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+
 
 
 const ORDER =
@@ -100,6 +102,33 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* SCROLL TABLET (avant Menu) */}
+<section className="bg-[#f7f6f3]">
+  <ContainerScroll
+    titleComponent={
+      <>
+        <p className="text-sm sm:text-base text-black/60">
+          Un aperçu rapide, avant de craquer.
+        </p>
+        <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-black">
+          Dwich 62
+          <br />
+          <span className="text-green-700">Menu & spécialités</span>
+        </h2>
+      </>
+    }
+  >
+    {/* ✅ Ton image custom dans la tablette */}
+    <img
+      src="/menu-preview.png"
+      alt="Aperçu du menu"
+      className="h-full w-full object-cover rounded-2xl"
+      draggable={false}
+    />
+  </ContainerScroll>
+</section>
+
 
       {/* MENU */}
 <section id="menu" className="scroll-mt-32 mx-auto max-w-6xl px-4 py-14 sm:py-20">
