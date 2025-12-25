@@ -131,7 +131,7 @@ export default function Page() {
 
 
       {/* MENU */}
-<section id="menu" className="scroll-mt-32 mx-auto max-w-6xl px-4 py-14 sm:py-20">
+<section id="menu" className="scroll-mt-32 mx-auto max-w-6xl px-4 pt-8 pb-14 sm:pt-10 sm:pb-20">
   <div className="text-center">
     <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
       Notre Menu
@@ -161,9 +161,11 @@ export default function Page() {
   {/* ✅ Bouton centré */}
   <div className="mt-10 flex justify-center">
     <InteractiveHoverButton
-      href="#menu"
+      href={ORDER}
+      target="_blank"
+      rel="noopener noreferrer"
       text="Voir le menu"
-      className="w-44 bg-green-600 text-white border-green-600 hover:bg-green-700"
+      className="w-56 bg-green-600 text-white border-green-600 hover:bg-green-700"
     />
   </div>
 </section>
